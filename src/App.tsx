@@ -1,13 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Navbar from './layouts/Navbar'
 
 function App() {
   return (
     <>
-      <div>
-        <h2 className='text-blue-600'>wetube</h2>
+      <div className='px-6 py-3'>
+        <Navbar />
       </div>
     </>
   )
