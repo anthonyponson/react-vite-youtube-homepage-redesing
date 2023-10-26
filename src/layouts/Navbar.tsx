@@ -3,17 +3,16 @@ import { FaMicrophone } from 'react-icons/fa'
 import { AiOutlineVideoCameraAdd } from 'react-icons/ai'
 import { IoIosNotificationsOutline } from 'react-icons/io'
 import { AiOutlineUser } from 'react-icons/ai'
+import { AiOutlineMenu } from 'react-icons/ai'
 
 import logo from '../assets/tube.png'
-import ham from '../assets/hamburger.png'
+
+import { Button } from '../components/button'
 
 function Navbar() {
   return (
     <div className='flex gap-10 lg:gap-20 justify-between items-center'>
-      <div className='flex gap-4 items-center'>
-        <button>
-          <img src={ham} width={20} height={20} alt='' />
-        </button>
+      <div className='flex gap-10 items-center'>
         <img src={logo} width={50} height={50} alt='' />
       </div>
 
