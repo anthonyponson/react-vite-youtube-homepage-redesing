@@ -3,16 +3,19 @@ import { FaMicrophone } from 'react-icons/fa'
 import { AiOutlineVideoCameraAdd } from 'react-icons/ai'
 import { IoIosNotificationsOutline } from 'react-icons/io'
 import { AiOutlineUser } from 'react-icons/ai'
-import { AiOutlineMenu } from 'react-icons/ai'
 
 import logo from '../assets/tube.png'
 
-import { Button } from '../components/button'
+import { Menu } from 'lucide-react'
+import { Button } from '../components/Button'
 
 function Navbar() {
   return (
     <div className='flex gap-10 lg:gap-20 justify-between items-center'>
       <div className='flex gap-10 items-center'>
+        <Button variant={'ghost'} size={'icon'}>
+          <Menu size={30} color='#fff' />
+        </Button>
         <img src={logo} width={50} height={50} alt='' />
       </div>
 
