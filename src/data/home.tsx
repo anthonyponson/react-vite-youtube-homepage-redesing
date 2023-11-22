@@ -4,6 +4,11 @@ export const categories = [
   'Bts',
   'Anime',
   'Kpop',
+  'Nextjs',
+  'React',
+  'TypeScript',
+  'Genshin impact',
+  'Honkai star rail',
   'Sports',
   'FIFA',
   'Music',
@@ -15,6 +20,4 @@ export const categories = [
   'Comedy',
   'Education',
   'News',
-  
-
 ]
