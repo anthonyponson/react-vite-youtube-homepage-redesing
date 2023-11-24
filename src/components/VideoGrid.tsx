@@ -1,4 +1,5 @@
 import { formatDuration } from '../utils/formatDuration'
+import { formatTimeAgo } from '../utils/formatTimeago'
 
 type VideoGridProps = {
   id: string
@@ -14,6 +15,8 @@ type VideoGridProps = {
   thumbnailUrl: string
   videoUrl: string
 }
+
+const VIEW_FORMATTER = new Intl.NumberFormat(undefined, { notation: 'compact' })
 
 export default function VideoGrid({
   id,
@@ -37,7 +40,7 @@ export default function VideoGrid({
           {formatDuration(duration)}
         </div>
       </a>
-      <div className='flex gap-3'>
+      <div className='flex gap-1'>
         <a href={`/@${channel.id}`} className='flex-shrink-0'>
           <img
             className='w-12 h-12 rounded-full'
@@ -47,13 +50,15 @@ export default function VideoGrid({
         </a>
 
         <div>
-          <h2 className='text-base font-semibold'>{title}</h2>
-          <h3 className='text-sm font-bold'>{channel.name}</h3>
+          <a href={`/watch?v=${id}`}>
+            <h2 className='text-base font-semibold'>{title}</h2>
+            <h3 className='text-sm font-bold'>{channel.name}</h3>
+          </a>
         </div>
 
-        <div>
-            <h2>{views}</h2>
-            {/* <h2>{postedAt}</h2> */}
+        <div className='text-secondary-text text-sm'>
+          <h2 className=''>{VIEW_FORMATTER.format(views)} Views</h2>
+          <h2>{formatTimeAgo(postedAt)}</h2>
         </div>
       </div>
     </div>
