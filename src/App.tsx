@@ -12,16 +12,16 @@ function App() {
   const [video, setVideos] = useState(videos)
   return (
     <>
-      <div className='px-2 py-3'>
+      <div className='max-h-screen flex flex-col px-2 py-3'>
         <Navbar />
         <div className='grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto'>
-          <div>sidebar</div>
+          {/* <div>sidebar</div> */}
           <div className='overflow-x-hidden px-8 pb-4'>
             <div className='sticky top-0 bg-white z-10 py-4'>
               <CategoryTabs categories={categories} />
             </div>
 
-            <div className='grid gap grid-cols-[repeat(auto-fill,minmax(300px,1fr))]'>
+            <div className='grid gap grid-cols-[repeat(auto-fill,minmax(250px,1fr))]'>
               {video.map(vid => (
                 <div className='p-2'>
                   <VideoGrid key={vid.id} {...vid} />
