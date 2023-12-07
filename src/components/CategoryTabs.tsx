@@ -42,7 +42,7 @@ function CategoryTabs({ categories }: CategoryTabsProps) {
     <>
       <div ref={containerRef} className='overflow-x-hidden relative'>
         <div
-          className='flex whitespace-nowrap gap-3 transition-transform w-[max-content] pt-0.5'
+          className='flex whitespace-nowrap gap-3 transition-transform w-[max-content]'
           style={{ transform: `translateX(-${translate}px)` }}
         >
           {categories.map(category => (

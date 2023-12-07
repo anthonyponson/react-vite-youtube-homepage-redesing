@@ -13,12 +13,12 @@ function App() {
   const [video, setVideos] = useState(videos)
   return (
     <>
-      <div className='max-h-screen flex flex-col px-2 py-3'>
+      <div className='max-h-screen flex flex-col'>
         <Navbar />
         <div className='grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto'>
           <SideBar />
           <div className='overflow-x-hidden px-8'>
-            <div className='sticky top-0 bg-white z-10 py-4'>
+            <div className='sticky top-0 bg-white z-10 pb-4'>
               <CategoryTabs categories={categories} />
             </div>
 

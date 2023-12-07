@@ -16,7 +16,7 @@ function Navbar() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false)
 
   return (
-    <div className='flex gap-10 justify-between items-center pt-2 lg:gap-20'>
+    <div className='flex gap-10 justify-between items-center py-4 lg:gap-20'>
       <div
         className={`items-center gap-2 ${
           showFullWidthSearch ? 'hidden' : 'flex'
