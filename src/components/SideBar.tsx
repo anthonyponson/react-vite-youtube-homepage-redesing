@@ -1,11 +1,19 @@
-import { AiFillHome, AiOutlineHome } from 'react-icons/ai'
+import {
+  AiFillHome,
+  AiOutlineClockCircle,
+  AiOutlineHistory,
+  AiOutlineHome,
+  AiOutlineUser,
+} from 'react-icons/ai'
 import { Button, buttonStyles } from './Button'
 import { twMerge } from 'tailwind-merge'
 import shorts from '../assets/shorts.svg'
-import { MdOutlineSubscriptions } from 'react-icons/md'
+import { MdOutlineSubscriptions, MdSubscriptions } from 'react-icons/md'
 import { VscLibrary } from 'react-icons/vsc'
 import { Children, ElementType, ReactNode, useState } from 'react'
-import { ChevronUp, ChevronDown } from 'lucide-react'
+import { ChevronUp, ChevronDown, Clapperboard, ListVideo } from 'lucide-react'
+import { RiHistoryFill, RiVideoLine } from 'react-icons/ri'
+import { playList, subcription } from '../data/SideBar'
 
 function SideBar() {
   return (
@@ -58,16 +66,67 @@ function SideBar() {
       </aside>
 
       <aside className='absolute w-56 lg:sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col gap-2 px-2'>
-        <LargeSidebar visibleCount={1}>
+        <LargeSidebar>
           <LargeSidebarItem isActive Icon={AiFillHome} title='Home' url='/' />
-          <LargeSidebarItem isActive Icon={AiFillHome} title='Home' url='/' />
+          <LargeSidebarItem Icon={Clapperboard} title='Shorts' url='/Shorts' />
+          <LargeSidebarItem
+            Icon={MdSubscriptions}
+            title='subcriptions'
+            url='/subcriptions'
+          />
+        </LargeSidebar>
+        <hr />
+        <LargeSidebar visibleCount={6}>
+          <LargeSidebarItem
+            Icon={AiOutlineUser}
+            title='your channel'
+            url='/your channel'
+          />
+          <LargeSidebarItem
+            Icon={RiHistoryFill}
+            title='History'
+            url='/your channel'
+          />
+          <LargeSidebarItem
+            Icon={VscLibrary}
+            title='Library'
+            url='/your channel'
+          />
+          <LargeSidebarItem
+            Icon={RiVideoLine}
+            title='your video'
+            url='/your channel'
+          />
+          <LargeSidebarItem
+            Icon={AiOutlineClockCircle}
+            title='watch later'
+            url='/your channel'
+          />
+          {playList.map(playlist => (
+            <LargeSidebarItem
+              key={playlist.id}
+              Icon={ListVideo}
+              title={`${playlist.name}`}
+              url='/'
+            />
+          ))}
+        </LargeSidebar>
+
+        <LargeSidebar>
+          {subcription.map(sub => (
+            <LargeSidebarItem
+              Icon={sub.imageUrl}
+              key={sub.id}
+              title={sub.channelName}
+            />
+          ))}
         </LargeSidebar>
       </aside>
     </>
   )
 }
 type LargeSidebarItemProps = {
-  Icon: ElementType
+  Icon: ElementType | string
   title: string
   url: string
   isActive?: boolean
@@ -134,7 +193,12 @@ function LargeSidebarItem({
           }`
         )}
       >
-        <Icon className='w-6 h-6' />
+        {typeof Icon === 'string' ? (
+          <img src={Icon} className='w-6 h-6 rounded-full' alt='' />
+        ) : (
+          <Icon className='w-6 h-6' />
+        )}
+
         <div className='whitespace-nowrap overflow-hidden text-ellipsis'>
           {title}
         </div>
