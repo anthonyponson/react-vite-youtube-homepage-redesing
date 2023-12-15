@@ -2,17 +2,20 @@ export const subcription = [
   {
     channelName: 'TraversyMedia',
     id: 'TraversyMedia',
-    imageUrl: 'URL1',
+    imageUrl:
+      'https://yt3.ggpht.com/_q52i8bUAEvcb7JR4e-eNTv23y2A_wg5sCz0NC0GrGtcw1CRMWJSOPVHUDh_bngD0q4gMvVeoA=s88-c-k-c0x00ffffff-no-rj',
   },
   {
     channelName: 'TheNetNinja',
     id: 'TheNetNinja',
-    imageUrl: 'URL2',
+    imageUrl:
+      'https://yt3.ggpht.com/2jnMywYYs6ZyWnqOVoKiaEiPD4_dvIcv5ajpa-vQMnBBmdk5EjpUcqAzQKX9Az4utTHGSIJS=s68-c-k-c0x00ffffff-no-rj',
   },
   {
     channelName: 'Firebase',
     id: 'Firebase',
-    imageUrl: 'https://yt3.googleusercontent.com/ytc/APkrFKb--NH6RwAGHYsD3KfxX-SAgWgIHrjR5E4Jb5SDSQ=s176-c-k-c0x00ffffff-no-rjURL3',
+    imageUrl:
+      'https://yt3.ggpht.com/GsP5Yvc5jOSop4SJf_75wdOYaEbO-7ZyYhnARodAGRnEMh-OQjGPGzUz2ZtzsHPtqFyHGvmbEtI=s88-c-k-c0x00ffffff-no-rj',
   },
   {
     channelName: 'ProgrammingwithMosh',

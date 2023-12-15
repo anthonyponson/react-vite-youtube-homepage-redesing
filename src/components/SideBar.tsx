@@ -13,7 +13,7 @@ import { VscLibrary } from 'react-icons/vsc'
 import { Children, ElementType, ReactNode, useState } from 'react'
 import { ChevronUp, ChevronDown, Clapperboard, ListVideo } from 'lucide-react'
 import { RiHistoryFill, RiVideoLine } from 'react-icons/ri'
-import { playList, subcription } from '../data/SideBar'
+import { playList, subcription } from '../data/sideBar'
 
 function SideBar() {
   return (
@@ -115,6 +115,7 @@ function SideBar() {
         <LargeSidebar>
           {subcription.map(sub => (
             <LargeSidebarItem
+              url={`/@${sub.id}`}
               Icon={sub.imageUrl}
               key={sub.id}
               title={sub.channelName}
