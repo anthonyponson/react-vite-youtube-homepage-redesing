@@ -12,45 +12,40 @@ export const subcription = [
       'https://yt3.ggpht.com/2jnMywYYs6ZyWnqOVoKiaEiPD4_dvIcv5ajpa-vQMnBBmdk5EjpUcqAzQKX9Az4utTHGSIJS=s68-c-k-c0x00ffffff-no-rj',
   },
   {
-    channelName: 'Firebase',
-    id: 'Firebase',
+    channelName: 'Fireship',
+    id: 'Fireship',
     imageUrl:
-      'https://yt3.ggpht.com/GsP5Yvc5jOSop4SJf_75wdOYaEbO-7ZyYhnARodAGRnEMh-OQjGPGzUz2ZtzsHPtqFyHGvmbEtI=s88-c-k-c0x00ffffff-no-rj',
+      'https://yt3.ggpht.com/ytc/AIf8zZTUVa5AeFd3m5-4fdY2hEaKof3Byp8VruZ0f0FNEA=s88-c-k-c0x00ffffff-no-rj',
   },
   {
     channelName: 'ProgrammingwithMosh',
     id: 'ProgrammingwithMosh',
-    imageUrl: 'URL4',
+    imageUrl:
+      'https://yt3.ggpht.com/ebu9ZksIXw0tUWBZd6rtk-It8VGSk8AdfSI_eGR-fl6WGet9LnVPngNQCmjdLJeGXpuylwYInQ=s88-c-k-c0x00ffffff-no-rj',
   },
   {
     channelName: 'Codevolution',
     id: 'Codevolution',
-    imageUrl: 'URL5',
+    imageUrl:
+      'https://yt3.ggpht.com/os7Yw6RimtysXXpc8NrXraci87TjXgZSUQyAezi0D3RrNL3YP5riIwi1-0al4Wz0XwzH6oBu6g=s88-c-k-c0x00ffffff-no-rj',
   },
   {
     channelName: 'DevEd',
     id: 'DevEd',
-    imageUrl: 'URL6',
+    imageUrl:
+      'https://yt3.ggpht.com/JfcqVinxsIc8dYsPIrp6IBDRMBb420BqVd2bzS9wqcMWBTzmnjUJ74Q0VByY1gUA8p-AYZQzxQ=s88-c-k-c0x00ffffff-no-rj',
   },
   {
     channelName: 'Netlify',
     id: 'Netlify',
-    imageUrl: 'URL7',
+    imageUrl:
+      'https://yt3.ggpht.com/ytc/AIf8zZSDJLC37q_YwFst5miVLO010eBXErVDMPdICyGQVg=s88-c-k-c0x00ffffff-no-rj',
   },
   {
-    channelName: 'FunFunFunction',
-    id: 'FunFunFunction',
-    imageUrl: 'URL8',
-  },
-  {
-    channelName: 'The Coding Train',
-    id: 'TheCodingTrain',
-    imageUrl: 'URL9',
-  },
-  {
-    channelName: 'LevelUpTuts',
-    id: 'LevelUpTuts',
-    imageUrl: 'URL10',
+    channelName: 'kevin powell',
+    id: 'Kevinpowell',
+    imageUrl:
+      'https://yt3.ggpht.com/ytc/AIf8zZRxB4nFdEqcC_k03diwmuSrFDlqfFEI_sv7fkc19g=s88-c-k-c0x00ffffff-no-rj',
   },
 ]
 

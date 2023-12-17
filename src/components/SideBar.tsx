@@ -11,14 +11,38 @@ import shorts from '../assets/shorts.svg'
 import { MdOutlineSubscriptions, MdSubscriptions } from 'react-icons/md'
 import { VscLibrary } from 'react-icons/vsc'
 import { Children, ElementType, ReactNode, useState } from 'react'
-import { ChevronUp, ChevronDown, Clapperboard, ListVideo } from 'lucide-react'
+import {
+  ChevronUp,
+  ChevronDown,
+  Clapperboard,
+  ListVideo,
+  Lightbulb,
+  Flame,
+  ShoppingBag,
+  Music2,
+  Film,
+  Radio,
+  Gamepad2,
+  Newspaper,
+  Trophy,
+  Shirt,
+  Podcast,
+} from 'lucide-react'
 import { RiHistoryFill, RiVideoLine } from 'react-icons/ri'
 import { playList, subcription } from '../data/sideBar'
+import { useSidebarContext } from '../Context/SidebarProvider'
+import { NavbarFirstSection } from '../layouts/Navbar'
 
 function SideBar() {
+  const { isLargeOpen, isSmallOpen } = useSidebarContext()
+
   return (
     <>
-      <aside className='sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 lg:hidden'>
+      <aside
+        className={`sticky hidden md:block top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 ${
+          isLargeOpen ? 'lg:hidden' : 'lg:flex'
+        }`}
+      >
         <a
           href='/'
           className={twMerge(
@@ -65,7 +89,12 @@ function SideBar() {
         {/* Add more links as needed */}
       </aside>
 
-      <aside className='absolute w-56 lg:sticky top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col gap-2 px-2'>
+      <aside
+        className={`absolute w-56 lg:sticky top-0 overflow-y-auto scrollbar-hidden pb-4 lg:flex flex-col gap-2 px-2 ${
+          isLargeOpen ? 'lg:flex' : 'lg:hidden'
+        } ${isSmallOpen ? 'flex z-[999] bg-white max-h-screen' : 'hidden'}`}
+      >
+        <NavbarFirstSection />
         <LargeSidebar>
           <LargeSidebarItem isActive Icon={AiFillHome} title='Home' url='/' />
           <LargeSidebarItem Icon={Clapperboard} title='Shorts' url='/Shorts' />
@@ -112,7 +141,9 @@ function SideBar() {
           ))}
         </LargeSidebar>
 
+        <hr />
         <LargeSidebar>
+          <h2 className='font-semibold text-lg ml-4'>Subscriptions</h2>
           {subcription.map(sub => (
             <LargeSidebarItem
               url={`/@${sub.id}`}
@@ -121,6 +152,30 @@ function SideBar() {
               title={sub.channelName}
             />
           ))}
+        </LargeSidebar>
+
+        <hr />
+
+        <LargeSidebar title='Explore'>
+          <LargeSidebarItem Icon={Flame} title='Trending' url='/trending' />
+          <LargeSidebarItem
+            Icon={ShoppingBag}
+            title='Shopping'
+            url='/shopping'
+          />
+          <LargeSidebarItem Icon={Music2} title='Music' url='/music' />
+          <LargeSidebarItem Icon={Film} title='Movies & TV' url='/movies-tv' />
+          <LargeSidebarItem Icon={Radio} title='Live' url='/live' />
+          <LargeSidebarItem Icon={Gamepad2} title='Gaming' url='/gaming' />
+          <LargeSidebarItem Icon={Newspaper} title='News' url='/news' />
+          <LargeSidebarItem Icon={Trophy} title='Sports' url='/sports' />
+          <LargeSidebarItem Icon={Lightbulb} title='Learning' url='/learning' />
+          <LargeSidebarItem
+            Icon={Shirt}
+            title='Fashion & Beauty'
+            url='/fashion-beauty'
+          />
+          <LargeSidebarItem Icon={Podcast} title='Podcasts' url='/podcasts' />
         </LargeSidebar>
       </aside>
     </>
@@ -195,7 +250,7 @@ function LargeSidebarItem({
         )}
       >
         {typeof Icon === 'string' ? (
-          <img src={Icon} className='w-6 h-6 rounded-full' alt='' />
+          <img src={Icon} className='w-8 h-8 rounded-full' alt='' />
         ) : (
           <Icon className='w-6 h-6' />
         )}

@@ -11,23 +11,15 @@ import { AiOutlineUser } from 'react-icons/ai'
 import logo from '../assets/tube.png'
 import { Button } from '../components/Button'
 import { useState } from 'react'
+import { useSidebarContext } from '../Context/SidebarProvider'
 
 function Navbar() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false)
+  const { toggle } = useSidebarContext()
 
   return (
     <div className='flex gap-10 justify-between items-center py-4 lg:gap-20'>
-      <div
-        className={`items-center gap-2 ${
-          showFullWidthSearch ? 'hidden' : 'flex'
-        }`}
-      >
-        <Button variant={'ghost'} size={'icon'}>
-          <AiOutlineMenu size={25} />
-        </Button>
-        <img src={logo} width={50} height={50} alt='' />
-      </div>
-
+      <NavbarFirstSection hidden={showFullWidthSearch} />
       <form
         className={`gap-4 flex-grow justify-center items-center ${
           showFullWidthSearch ? 'flex' : 'hidden md:flex'
@@ -97,3 +89,19 @@ function Navbar() {
 }
 
 export default Navbar
+
+type NavbarFirstSectionProps = {
+  hidden?: boolean
+}
+
+export function NavbarFirstSection({ hidden }: NavbarFirstSectionProps) {
+  const { toggle } = useSidebarContext()
+  return (
+    <div className={`items-center gap-2 ${hidden ? 'hidden' : 'flex'}`}>
+      <Button variant={'ghost'} size={'icon'}>
+        <AiOutlineMenu onClick={toggle} size={25} />
+      </Button>
+      <img src={logo} width={50} height={50} alt='' />
+    </div>
+  )
+}
