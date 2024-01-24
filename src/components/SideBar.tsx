@@ -94,7 +94,7 @@ function SideBar() {
           isLargeOpen ? 'lg:flex' : 'lg:hidden'
         } ${isSmallOpen ? 'flex z-[999] bg-white max-h-screen' : 'hidden'}`}
       >
-        <NavbarFirstSection />
+        {/* <NavbarFirstSection /> */}
         <LargeSidebar>
           <LargeSidebarItem isActive Icon={AiFillHome} title='Home' url='/' />
           <LargeSidebarItem Icon={Clapperboard} title='Shorts' url='/Shorts' />
