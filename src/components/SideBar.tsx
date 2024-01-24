@@ -39,7 +39,7 @@ function SideBar() {
   return (
     <>
       <aside
-        className={`sticky hidden md:block top-0 overflow-y-auto scrollbar-hidden pb-4 flex flex-col ml-1 ${
+        className={`sticky hidden md:block top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col ml-1 ${
           isLargeOpen ? 'lg:hidden' : 'lg:flex'
         }`}
       >
